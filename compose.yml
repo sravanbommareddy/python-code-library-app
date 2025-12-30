@@ -1,0 +1,27 @@
+---
+services:
+  db:
+    image: sravandevops0067/library:dbimage
+    ports:
+      - "3306:3306"
+
+  auth_service:
+       image: sravandevops0067/library:authimage
+       ports:
+         - "5001:5001"
+
+  book_service:
+       image: sravandevops0067/library:bookimage
+       ports:
+         - "5002:5002"
+
+  borrow_service:
+       image: sravandevops0067/library:borrowimage
+       ports:
+         - "5003:5003"
+
+  frontened:
+       image: sravandevops0067/library:frotenedimage
+       ports:
+         - "1122:5000"
+...         
