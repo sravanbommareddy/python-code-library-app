@@ -21,7 +21,7 @@ services:
          - "5003:5003"
 
   frontened:
-       image: sravandevops0067/library:frotenedimage
+       image: sravandevops0067/library:frontenedimage
        ports:
          - "1122:5000"
 ...         
