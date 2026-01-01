@@ -7,7 +7,7 @@ services:
     deploy:
       replicas: 2
     volumes:
-      - dbvolume:/appdata   
+      - dbvolume:/var/lib/mysql   
 
   auth_service:
        image: sravandevops0067/library:authimage
