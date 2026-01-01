@@ -4,24 +4,41 @@ services:
     image: sravandevops0067/library:dbimage
     ports:
       - "3306:3306"
+    deploy:
+      replicas: 2
+    volumes:
+      - dbvolume:/appdata   
 
   auth_service:
        image: sravandevops0067/library:authimage
        ports:
          - "5001:5001"
+       deploy:
+         replicas: 3  
 
   book_service:
        image: sravandevops0067/library:bookimage
        ports:
          - "5002:5002"
+       deploy:
+         replicas: 2  
 
   borrow_service:
        image: sravandevops0067/library:borrowimage
        ports:
          - "5003:5003"
+       deploy:
+         replicas: 1  
 
   frontened:
        image: sravandevops0067/library:frontenedimage
        ports:
          - "1122:5000"
+       deploy:
+         replicas: 2
+       volumes:  
+         - appvolume:/appdata
+volumes:
+   appvolume:
+   dbvolume:
 ...         
